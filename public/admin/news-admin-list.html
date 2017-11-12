@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Saigonbpo Admin</title>
+
+	<!-- Global stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/core.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/components.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/colors.css" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->
+	<script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+	<script type="text/javascript" src="assets/js/plugins/tables/datatables/datatables.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/tables/datatables/extensions/responsive.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/select2.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/core/app.js"></script>
+	<script type="text/javascript" src="assets/js/pages/datatables_responsive.js"></script>
+	<!-- /theme JS files -->
+
+</head>
+
+<body>
+
+	<!-- Main navbar -->
+	<div class="navbar navbar-default header-highlight">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.html"><img src="assets/images/logo_light.png" alt=""></a>
+
+			<ul class="nav navbar-nav visible-xs-block">
+				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+				<li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+			</ul>
+		</div>
+
+		<div class="navbar-collapse collapse" id="navbar-mobile">
+			<ul class="nav navbar-nav">
+				<li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="icon-paragraph-justify3"></i></a></li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+
+				<li class="dropdown dropdown-user">
+					<a class="dropdown-toggle" data-toggle="dropdown">
+						<img src="assets/images/placeholder.jpg" alt="">
+						<span>Admin</span>
+						<i class="caret"></i>
+					</a>
+
+					<ul class="dropdown-menu dropdown-menu-right">
+						<li><a href="#"><i class="icon-switch2"></i> Đăng xuất</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /main navbar -->
+
+
+	<!-- Page container -->
+	<div class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main sidebar -->
+			<div class="sidebar sidebar-main">
+				<div class="sidebar-content">
+
+					<!-- Main navigation -->
+					<div class="sidebar-category sidebar-category-visible">
+						<div class="category-content no-padding">
+							<ul class="navigation navigation-main navigation-accordion">
+
+								<!-- Main -->
+								<li class="active"><a href="index.html"><i class="icon-home4"></i> <span>Trang chủ</span></a></li>
+								<li>
+									<a href="news-admin-list.html"><i class="icon-copy"></i> <span>Tin Tức</span></a>
+									<ul>
+										<li><a href="news-admin-list.html"><i class="icon-list"></i> <span>Danh sách</span></a></li>
+										<li><a href="news-admin-add.html"><i class="icon-file-plus"></i> <span>Thêm Tin</span></a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#"><i class="icon-magazine"></i> <span>Sự Kiện</span></a>
+									<ul>
+										<li><a href="news-admin-list.html"><i class="icon-list"></i> <span>Danh sách</span></a></li>
+										<li><a href="news-admin-add.html"><i class="icon-file-plus"></i> <span>Thêm Tin</span></a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#"><i class="icon-grid"></i> <span>Bộ Phận</span></a>
+									<ul>
+										<li><a href="event-admin-list.html"><i class="icon-list"></i> <span>Danh sách</span></a></li>
+										<li><a href="event-admin-add.html"><i class="icon-file-plus"></i> <span>Thêm Tin</span></a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#"><i class="icon-images2"></i> <span>Thư Viện</span></a>
+									<ul>
+										<li><a href="album-admin-list.html"><i class="icon-list"></i> <span>Danh sách</span></a></li>
+										<li><a href="album-admin-add.html"><i class="icon-file-plus"></i> <span>Thêm Tin</span></a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#"><i class="icon-people"></i> <span>Sơ đồ nhân sự</span></a>
+									<ul>
+										<li><a href="diagrams-admin-list.html"><i class="icon-list"></i> <span>Danh sách</span></a></li>
+										<li><a href="diagrams-admin-add.html"><i class="icon-file-plus"></i> <span>Thêm Tin</span></a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#"><i class="icon-graph"></i> <span>Khảo sát</span></a>
+									<ul>
+										<li><a href="diagrams-admin-list.html"><i class="icon-list"></i> <span>Danh sách</span></a></li>
+										<li><a href="diagrams-admin-add.html"><i class="icon-file-plus"></i> <span>Thêm Tin</span></a></li>
+									</ul>
+								</li>
+
+							</ul><!--end ul sidebar-->
+						</div>
+					</div><!-- /main navigation -->
+				</div>
+			</div><!-- /main sidebar -->
+
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Page header -->
+				<div class="page-header">
+					<div class="page-header-content">
+						<div class="page-title">
+							<h4><i class="icon-copy position-left"></i> <span class="text-semibold">Tin Tức</span></h4>
+						</div>
+					</div>
+
+					<div class="breadcrumb-line breadcrumb-line-component">
+						<ul class="breadcrumb">
+							<li><a href="index.html"><i class="icon-home2 position-left"></i> Trang chủ</a></li>
+							<li><a href="datatable_responsive.html">Tin Tức</a></li>
+							<li class="active">Danh sách</li>
+						</ul>
+					</div>
+				</div><!-- /page header -->
+
+
+				<!-- Content area -->
+				<div class="content">
+
+					<!-- Basic responsive configuration -->
+					<div class="panel panel-flat">
+						<div class="panel-heading">
+							<h5 class="panel-title">Danh sách tin tức</h5>
+							<div class="heading-elements">
+								<ul class="icons-list">
+			                		<li><a data-action="collapse"></a></li>
+			                		<li><a data-action="reload"></a></li>
+			                	</ul>
+		                	</div>
+						</div>
+
+						<table class="table table-bordered news-table">
+							<thead>
+								<tr>
+									<th>Tiêu đề</th>
+									<th>Hình nhỏ</th>
+									<th>Hình lớn</th>
+									<th>Mô tả</th>
+									<th>Nội dung</th>
+									<th>Ngày đăng</th>
+									<th class="text-center">Thao tác</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr>
+									<td>Tin nội bộ 1</td>
+									<td>02-screenshot.jpg</td>
+									<td>02-screenshot.jpg</td>
+									<td>Đây là tin nội bộ 1</td>
+									<td>
+										<p>Nam nisl lacus, dignissim ac tristique ut, scelerisque eu massa.
+										 Vestibulum ligula nunc, rutrum in malesuada vitae, tempus sed augue.
+										 Curabitur quis lectus quis augue dapibus facilisis. Vivamus tincidunt orci est,
+										in vehicula nisi eleifend ut. Vestibulum sagittis varius orci vitae.</p>
+									</td>
+									<td>22 Jun 1972</td>
+									<td class="text-center">
+										<ul class="icons-list">
+											<li class="dropdown">
+												<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+													<i class="icon-menu9"></i>
+												</a>
+												<ul class="dropdown-menu dropdown-menu-right">
+													<li><a href="news-admin-edit.html"><i class="icon-file-empty"></i><span class="label label label-info">Sửa</span></a></li>
+													<li><a href="#" data-toggle="modal" data-target="#Modal-1">
+														<i class="icon-file-minus"></i><span class="label label-danger">Xóa</span></a>
+													</li>
+												</ul>
+												<!-- Modal -->
+												<div class="modal fade" id="Modal-1" tabindex="-1" role="dialog" aria-labelledby="modal-1">
+													<div class="modal-dialog" role="document">
+														<div class="modal-content">
+															<div class="modal-header">
+																<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+																<h4 class="modal-title" id="modal-1">Bạn chắc muốn xóa tin 1</h4>
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-danger">Xóa</button>
+																<button type="button" class="btn btn-default" data-dismiss="modal">Thoát</button>
+															</div>
+														</div>
+													</div>
+												</div>
+												<!-- Modal -->
+											</li>
+										</ul>
+									</td>
+								</tr><!--end tr-->
+
+								<tr>
+									<td>Tin nội bộ 2</td>
+									<td>02-screenshot.jpg</td>
+									<td>02-screenshot.jpg</td>
+									<td>Đây là tin nội bộ 1</td>
+									<td>
+										<p>Nam nisl lacus, dignissim ac tristique ut, scelerisque eu massa.
+										 Vestibulum ligula nunc, rutrum in malesuada vitae, tempus sed augue.
+										 Curabitur quis lectus quis augue dapibus facilisis. Vivamus tincidunt orci est,
+										in vehicula nisi eleifend ut. Vestibulum sagittis varius orci vitae.</p>
+									</td>
+									<td>22 Jun 1972</td>
+									<td class="text-center">
+										<ul class="icons-list">
+											<li class="dropdown">
+												<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+													<i class="icon-menu9"></i>
+												</a>
+												<ul class="dropdown-menu dropdown-menu-right">
+													<li><a href="news-admin-edit.html"><i class="icon-file-empty"></i><span class="label label label-info">Sửa</span></a></li>
+													<li><a href="#" data-toggle="modal" data-target="#Modal-2">
+														<i class="icon-file-minus"></i><span class="label label-danger">Xóa</span></a>
+													</li>
+												</ul>
+												<!-- Modal -->
+												<div class="modal fade" id="Modal-2" tabindex="-1" role="dialog" aria-labelledby="modal-2">
+													<div class="modal-dialog" role="document">
+														<div class="modal-content">
+															<div class="modal-header">
+																<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+																<h4 class="modal-title" id="modal-2">Bạn chắc muốn xóa tin 2</h4>
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-danger">Xóa</button>
+																<button type="button" class="btn btn-default" data-dismiss="modal">Thoát</button>
+															</div>
+														</div>
+													</div>
+												</div>
+												<!-- Modal -->
+											</li>
+										</ul>
+									</td>
+								</tr><!--end tr-->
+
+
+								<tr>
+									<td>Tin nội bộ 3</td>
+									<td>02-screenshot.jpg</td>
+									<td>02-screenshot.jpg</td>
+									<td>Đây là tin nội bộ 3</td>
+									<td>
+										<p>Nam nisl lacus, dignissim ac tristique ut, scelerisque eu massa.
+										 Vestibulum ligula nunc, rutrum in malesuada vitae, tempus sed augue.
+										 Curabitur quis lectus quis augue dapibus facilisis. Vivamus tincidunt orci est,
+										in vehicula nisi eleifend ut. Vestibulum sagittis varius orci vitae.</p>
+									</td>
+									<td>22 Jun 1972</td>
+									<td class="text-center">
+										<ul class="icons-list">
+											<li class="dropdown">
+												<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+													<i class="icon-menu9"></i>
+												</a>
+												<ul class="dropdown-menu dropdown-menu-right">
+													<li><a href="news-admin-edit.html"><i class="icon-file-empty"></i><span class="label label label-info">Sửa</span></a></li>
+													<li><a href="#" data-toggle="modal" data-target="#Modal-3">
+														<i class="icon-file-minus"></i><span class="label label-danger">Xóa</span></a>
+													</li>
+												</ul>
+												<!-- Modal -->
+												<div class="modal fade" id="Modal-3" tabindex="-1" role="dialog" aria-labelledby="modal-3">
+													<div class="modal-dialog" role="document">
+														<div class="modal-content">
+															<div class="modal-header">
+																<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+																<h4 class="modal-title" id="modal-3">Bạn chắc muốn xóa tin 3</h4>
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-danger">Xóa</button>
+																<button type="button" class="btn btn-default" data-dismiss="modal">Thoát</button>
+															</div>
+														</div>
+													</div>
+												</div>
+												<!-- Modal -->
+											</li>
+										</ul>
+									</td>
+								</tr><!--end tr-->
+
+							</tbody>
+						</table>
+					</div>
+					<!-- /basic responsive  -->
+
+
+					<!-- Footer -->
+					<div class="footer text-muted">
+						&copy; 2017.SaigonBpo Admin by Khoa Tran
+					</div>
+					<!-- /footer -->
+
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div><!-- /page container -->
+
+
+</body>
+</html>

@@ -1,0 +1,655 @@
+echo "<pre>";
+print_r($quescate);
+echo "</pre>";
+exit;
+
+
+$rules = [
+   'ansrdo'=> 'required',
+ ];
+
+$message = [
+  'ansrdo.required' => 'Bạn chưa chọn đáp án.',
+];
+
+ $this->validate($request, array(
+    'ansrdo'=> 'required'
+ ));
+
+ $validator = Validator::make(Input::all(), $rules, $message);
+
+ if ($validator->fails()) {
+   return Redirect::back()->withErrors($validator)->withInput();
+ }
+
+
+<script type="text/javascript">
+
+
+
+                        $(document).ready(function () {
+                            var data =${arrlookupchannel};
+
+                            var table = $('#example2').DataTable({
+                                "aaData": data,
+                                "columnDefs": [
+
+
+                                    {
+                                        width: '10px',
+                                        orderable: false,
+
+
+                                        "targets": 7,
+                                        "render": function (data, type, full, meta) {
+
+                                            if (data) {
+
+                                                return '<span class="label label-success">No</span>'
+
+
+                                            }
+                                            else {
+                                                return '<span class="label label-danger">Blocked </span>'
+                                            }
+
+
+                                        }
+                                    },
+
+
+                                    {
+                                        width: '50px',
+                                        orderable: false,
+
+
+                                        "targets": 8,
+                                        "render": function (data, type, full, meta) {
+
+                                            return data == true ? 'Yes' : 'No'
+
+                                        }
+                                    },
+
+                                    {
+                                        "targets": 9,
+                                        "render": function (data, type, full, meta) {
+
+                                            // how can i acccess here column 4?
+                                            var edit='<button type="button" class="btn btn-primary btn-sm btnEdit" data-toggle="modal" data-id="${pageContext.request.contextPath}/component/usermanagement/usersetting/edit/' + full.id +'" title="Edit user">';
+
+
+                                            return '<div class="btn-group btn-group-sm" role="group"> ' +
+
+                                                '<button type="button" class="btn btn-primary btn-sm btnEdit" data-toggle="modal" data-id="${pageContext.request.contextPath}/component/usermanagement/usersetting/edit/' + full.id +'" title="Edit user">' +
+                                                ' <i class="mdi mdi-account-edit mdi-18px"></i>' +
+
+                                                '</button> <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteUser" title="Delete user"> ' +
+                                                ' <i class="mdi mdi-account-remove mdi-18px"></i>' +
+
+                                                '</button>  <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#unblockUser" title="Unblock user"> ' +
+                                                ' <i class="mdi mdi-lock-open-outline mdi-18px"></i>' +
+                                                '' +
+                                                '</button>  <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#resetUser" title="Reset password">  ' +
+                                                '<i class="mdi mdi-autorenew mdi-18px"></i></button> </div>'
+
+                                        }
+                                    }
+                                ],
+
+                                autoWidth: true,
+
+                                dom: '<"datatable-header"fl><"datatable-scroll"t><"datatable-footer"ip>',
+                                language: {
+                                    sZeroRecords: "Không tìm thấy thông tin",
+                                    search: '<span>Filter:</span> _INPUT_',
+                                    lengthMenu: '<span>Show:</span> _MENU_',
+                                    paginate: {'first': 'First', 'last': 'Last', 'next': '&rarr;', 'previous': '&larr;'}
+                                },
+                                drawCallback: function () {
+                                    $(this).find('tbody tr').slice(-3).find('.dropdown, .btn-group').addClass('dropup');
+                                },
+                                "bDestroy": true,
+                                preDrawCallback: function () {
+                                    $(this).find('tbody tr').slice(-3).find('.dropdown, .btn-group').removeClass('dropup');
+                                },
+
+
+                                "aoColumns": [
+
+                                    {"mData": "cc_code", "defaultContent": ""},
+                                    {"mData": "cc_name", "defaultContent": ""},
+                                    {"mData": "cc_role", "defaultContent": ""},
+                                    {"mData": "channel", "defaultContent": ""},
+                                    {"mData": "province", "defaultContent": ""},
+                                    {"mData": "pos_code", "defaultContent": ""},
+                                    {"mData": "pos_name", "defaultContent": ""},
+                                    {"mData": "is_enable", "defaultContent": ""},
+                                    {
+                                        "mData": "is_android"
+                                    }
+
+                                ]
+                            });
+
+                            $('.datatable-pagination').DataTable({
+                                pagingType: "simple",
+                                language: {
+                                    paginate: {'next': 'Next &rarr;', 'previous': '&larr; Prev'}
+                                }
+                            });
+
+                            $('.datatable-save-state').DataTable({
+                                stateSave: true
+                            });
+
+                            $('.datatable-basic').DataTable({
+                                scrollY: 580,
+                            });
+
+                            $('.dataTables_filter input[type=search]').attr('placeholder', 'Lọc thông tin...');
+
+                            /*
+                             $('.dataTables_length select').select2({
+                             minimumResultsForSearch: Infinity,
+                             width: 'auto'
+                             });
+
+
+
+
+
+//sidebar
+
+                             <div class="col-md-4 extra-gutter-left">
+                               <!-- Search -->
+                               <div class="widget">
+                                 <h4>Tìm Kiếm</h4>
+                                 <div class="search">
+                                   <form role="search" method="get" id="searchform" action="{{route('search')}}">
+                                     <div class="input"><input class="search-field" type="text" name="key" placeholder="Tìm Kiếm" value="" /></div>
+                                   </form>
+                                 </div>
+                               </div>
+
+                               <!-- Tabs -->
+                               <div class="widget">
+
+                                 <ul class="tabs-nav blog">
+                                   <li class="active"><a href="#tab1">Xem nhiều</a></li>
+                                   <li><a href="#tab2">Liên quan</a></li>
+                                 </ul>
+
+                                 <!-- Tabs Content -->
+                                 <div class="tabs-container">
+
+                                   <div class="tab-content" id="tab1">
+
+                                     <!-- Recent Posts -->
+                                     <ul class="widget-tabs">
+                                       @foreach ($newscv as $newv)
+                                         <!-- Post #1 -->
+                                         <li>
+                                           <div class="widget-thumb">
+                                             <a href="blog-post-page.html"><img src="public/home/images/{{$newv->News_Thumbnail}}" alt="" /></a>
+                                           </div>
+
+                                           <div class="widget-text">
+                                             <h5><a href="{{route('tinchitiet',$newv->News_ID)}}">{{$newv->News_Title}}</a></h5>
+                                             <span>{{$newv->News_Date}}</span>
+                                             <span>Lượt xem: {{$newv->News_CountView	}}</span>
+                                           </div>
+                                           <div class="clearfix"></div>
+                                         </li>
+                                         @endforeach
+                                     </ul>
+
+                                   </div>
+
+                                   <div class="tab-content" id="tab2">
+
+                                     <!-- Recent Posts -->
+                                     <ul class="widget-tabs">
+                                       @foreach ($newsrl as $newlq)
+                                         <!-- Post #1 -->
+                                         <li>
+                                           <div class="widget-thumb">
+                                             <a href="blog-post-page.html"><img src="public/home/images/{{$newlq->News_Thumbnail}}" alt="" /></a>
+                                           </div>
+                                           <div class="widget-text">
+                                             <h5><a href="{{route('tinchitiet',$newlq->News_ID)}}">{{$newlq->News_Title}}</a></h5>
+                                             <span>{{$newlq->News_Date}}</span>
+                                           </div>
+                                           <div class="clearfix"></div>
+                                         </li>
+                                       @endforeach
+                                     </ul>
+                                   </div>
+
+                                 </div>
+                               </div>
+
+                               <div class="clearfix"></div>
+                               <div class="margin-bottom-40"></div>
+                             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                             <div class="container">
+                             	<div class="row">
+
+                             		@foreach($memtop as $memtops)
+                               		<div class="col-sm-6 col-md-3">
+                                       <div class="card hovercard">
+                                           <div class="avatar">
+                             								@if($memtops->Employee_Avatar != "")
+                                               <img src="{{asset($path.$memtops->Employee_Avatar)}}"  alt="">
+                             								<?php else: ?>
+                             									<img src="../public/home/images/no-mem.png"/>
+                             								@endif
+                                           </div>
+                                           <div class="info">
+                                               <div class="title">
+                                                   <a href="#">{{$memtops->Employee_Name}}</a>
+                                               </div>
+                                               <h4>{{$memtops->Employee_Position}}</h4>
+                             									<span><i class="fa fa-phone"></i> {{$memtops->Employee_InterPhone}}</span>
+                             									<span><i class="fa fa-envelope-o"></i> {{$memtops->Employee_Email}}</span>
+                                           </div>
+                                       </div><!--end card-->
+                                   </div>
+                             			<p>{{$memtops->Employee_Intro}}</p>
+                             		@endforeach
+
+                             		<div class="preboder"></div>
+                               </div><!--end row-->
+
+                               <div class="row">
+                                 @foreach($mem as $mems)
+                             		<div class="col-sm-6 col-md-3">
+                             				<div class="card hovercard">
+                             						<div class="avatar">
+                             						@if($mems->Employee_Avatar != "")
+                             							<img src="{{asset($path.$mems->Employee_Avatar)}}">
+                             						<?php else: ?>
+                             							<img src="../public/home/images/no-mem.png"/>
+                             						@endif
+                             						</div>
+                             						<div class="info">
+                             								<div class="title">
+                             										<a href="#">{{$mems->Employee_Name}}</a>
+                             								</div>
+                             								<h4>{{$mems->Employee_Position}}</h4>
+                             								<span><i class="fa fa-phone"></i> {{$mems->Employee_InterPhone}}</span>
+                             									<span><i class="fa fa-envelope-o"></i> {{$mems->Employee_Email}}</span>
+                             						</div>
+                             				</div><!--end card-->
+                             		</div><!--end col-md-3-->
+                             		@endforeach
+
+                               </div><!--end row-->
+
+                             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                             <ul class="icons-list">
+                               <li class="dropdown">
+                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                   <i class="icon-menu9"></i>
+                                 </a>
+                                 <ul class="dropdown-menu dropdown-menu-right">
+                                   <li>
+                                     <a href="#" data-toggle="modal" data-target="#EditImg-{{$itemnews->News_ID}}">
+                                     <i class="icon-file-minus"></i><span class="label label-danger">Đổi hình</span></a>
+                                   </li>
+                                 </ul>
+
+                                     <!-- Modal -->
+                                     <div class="modal fade" id="EditImg-{{$itemnews->News_ID}}" tabindex="-1" role="dialog" aria-labelledby="newsedit">
+                                       <div class="modal-dialog" role="document">
+                                         <div class="modal-content">
+                                           <div class="modal-header">
+                                             <button type="button" class="close" data-dismiss="modal2" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                             <h4 class="modal-title" id="newsedit">Chọn hình</h4>
+                                           </div>
+                                           <div class="modal-body">
+                                             <input type="file" class="file-styled" name="nlimage">
+                                           </div>
+                                           <div class="modal-footer">
+                                             <button type="button" class="btn btn-default" data-dismiss="modal">Thoát</button>
+                                           </div>
+                                         </div>
+                                       </div>
+                                     </div>
+                                     <!-- Modal -->
+                               </li>
+                             </ul>
+
+
+                             $cateab= DB::table('album')->select('Album_ID', 'Album_Title')
+                                                        ->get();
+
+
+
+
+
+
+
+
+
+
+@extends('master')
+@section('content')
+
+<link href="public/home/css/orgchart.css" rel="stylesheet" />
+<script src="public/home/js/orgchart.js"></script>
+
+<style type="text/css">
+		html, body {
+					 margin: 0px;
+					 padding: 0px;
+					 width: 100%;
+					 height: 100%;
+					 overflow: hidden;
+			 }
+
+		 body {
+				margin: 0px;
+				padding: 0px;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+		}
+
+		#people {
+			width: 100%;
+			height: 100%;
+		}
+</style>
+
+<div id="people"></div>
+<table id="orgChartData">
+    <tr>
+        <th>ID</th>
+        <th>parent id</th>
+        <th>name</th>
+        <th>title</th>
+        <th>image</th>
+    </tr>
+    @foreach($memchart as $r)
+      <tr>
+          <td>{{$r->Employee_ID}}</td>
+          <td>{{$r->Employee_Parent_ID}}</td>
+          <td style="font-size:10px">{{$r->Employee_Name}}</td>
+          <td>{{$r->Position_Name}}</td>
+          <td>public/upload/member/{{$r->Employee_Avatar}}</td>
+      </tr>
+    @endforeach
+
+</table>
+
+
+
+
+
+<script type="text/javascript">
+
+getOrgChart.themes.myCustomTheme =
+{
+		size: [270, 400],
+		toolbarHeight: 46,
+		textPoints: [
+				{ x: 130, y: 50, width: 250 },
+				{ x: 130, y: 90, width: 250 }
+		],
+		textPointsNoImage: [
+				{ x: 130, y: 50, width: 250 },
+				{ x: 130, y: 90, width: 250 }
+		],
+		expandCollapseBtnRadius: 20,
+		defs: '<filter id="f1" x="0" y="0" width="200%" height="200%"><feOffset result="offOut" in="SourceAlpha" dx="5" dy="5" /><feGaussianBlur result="blurOut" in="offOut" stdDeviation="5" /><feBlend in="SourceGraphic" in2="blurOut" mode="normal" /></filter>',
+		box: '<rect x="0" y="0" height="400" width="270" rx="10" ry="10" class="myCustomTheme-box" filter="url(#f1)"  />',
+		text: '<text text-anchor="middle" width="[width]" class="get-text get-text-[index]" x="[x]" y="[y]">[text]</text>',
+		image: '<clipPath id="getMonicaClip"><circle cx="135" cy="255" r="85" /></clipPath><image preserveAspectRatio="xMidYMid slice" clip-path="url(#getMonicaClip)" xlink:href="[href]" x="50" y="150" height="190" width="170"/>',
+		reporters: '<circle cx="80" cy="190" r="20" class="reporters"></circle><text class="reporters-text" text-anchor="middle" width="100" x="80" y="195">[reporters]</text>'
+
+		//ddddd: '<text x="0" y="0">1</text>'
+};
+
+var orgchart = new getOrgChart(document.getElementById("people"), {
+		theme: "myCustomTheme",
+		dataSource:document.getElementById("orgChartData")
+});
+
+function renderNodHandler(sender, args) {
+		for (var i = 0; i < args.content.length; i++) {
+				if (args.content[i].indexOf("[reporters]") != -1) {
+						args.content[i] = args.content[i].replace("[reporters]", args.node.children.length);
+				}
+		}
+}
+
+</script>
+@endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div style="float: right; width: 10%; height:100%; text-align:center; display: none;" >
+  		<table id="orgChartData">
+  				<tr>
+  						<th>ID</th>
+  						<th>parent id</th>
+  						<th>name</th>
+  						<th>title</th>
+  						<th>image</th>
+  				</tr>
+  				@foreach($memchart as $r)
+  					<tr>
+  							<td>{{$r->Employee_ID}}</td>
+  							<td>{{$r->Employee_Parent_ID}}</td>
+  							<td style="font-size:10px">{{$r->Employee_Name}}</td>
+  							<td>{{$r->Position_Name}}</td>
+  							<td>upload/member/{{$r->Employee_Avatar}}</td>
+  					</tr>
+  				@endforeach
+
+  		</table>
+  </div>
+
+
+  <script type="text/javascript">
+        var peopleElement = document.getElementById("people");
+        var orgChart = new getOrgChart(peopleElement, {
+            enableZoom: true,
+            enablePrint: false,
+            enableEdit: false,
+            enableDetailsView: false,
+            theme: "ula",
+            linkType: "B",
+            primaryFields: ["name", "title", "mobile", "email"],
+            photoFields: ["image"],
+            dataSource: document.getElementById("orgChartData")
+        });
+
+</script>
+
+
+
+
+
+
+
+
+
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Answer;
+use App\Question;
+use Validator;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\MessageBag;
+use Session;
+
+class SurveyController extends Controller
+{
+  public function survey_list() {
+    $ques = DB::table('question')->where('Ques_Status',1)
+                                 ->orderBy('Ques_ID', 'asc')
+                                 ->get();
+
+    return view('home.survey_list',compact('ques','Cate'));
+  }
+
+  public function survey_edit(Request $req) {
+
+    $quescate = DB::table('question')
+              ->select('Ques_ID','Ques_Title')
+              ->where ('Ques_ID',$req->id)
+              ->get();
+
+    $survey = DB::table('answer')
+              ->join('question', 'answer.Ans_Ques_ID','=', 'question.Ques_ID')
+              ->select('question.Ques_Title','answer.Ans_ID','answer.Ans_Title','answer.Ans_Image',
+               'answer.Ans_Count','answer.Ans_Ques_ID')
+              ->where ('Ans_Ques_ID',$req->id)
+              ->get();
+
+    return view('home.survey',compact('quescate','survey','Cate'));
+  }
+
+  public function post_survey_edit(Request $request , $id) {
+
+    $rules = [
+       'ansrdo'=>'required',
+       'bc' => ''
+     ];
+
+    $messages = [
+      'ansrdo.required'=>'Bạn chưa chọn câu trả lời.',
+      'bc.unique' => 'Bạn chỉ có 1 lần bình chọn'
+    ];
+
+  //   $this->validate($request,$rules,$messages);
+
+     $validator = Validator::make($request->all(),$rules,$messages);
+
+
+     if ($validator->fails()) {
+       return redirect()->back()->withErrors($validator)->withInput();
+     }
+     else
+     {
+
+       if(Session::get('userss') !== null) { //co session  user
+
+             $userlogin = Session::get('userss');
+             $ansid = $request->input('ansrdo');
+
+              if($ansid !== null) { //neu co chon dap an
+                   $choice = 0;
+
+                    $exists = DB::table('poll')->where('Poll_Ans_ID', '=', $ansid)
+                                               ->Where('Poll_User', $userlogin)
+                                               ->where ('Poll_Ans_Ques_ID',$id)
+                                               ->first();
+
+                    if(!$exists) { //neu ko trung
+                        $inspoll = DB::table('poll')->insertGetId (  //chen du lieu
+                            [
+                              'Poll_Ans_ID' => $ansid,
+                              'Poll_User' => $userlogin,
+                              'Poll_Ans_Ques_ID' => $id,
+                              'Poll_Choice' => $choice + 1
+                            ]
+                        );
+                        return redirect()->route('ketqua',$id); //  xem ketqua
+                      }
+                      else { //neu trung
+                        return redirect()->route('khaosat_edit',$id)->with('data', 'Bạn đã chọn đáp án này rồi');
+                      }
+
+                    //count
+             }
+             else  {
+                echo "chua chon dap an";
+             }
+        }
+        else {
+           echo "ko co session user , chưa đăng nhập";
+        }
+    }
+  }//end post
+
+
+}
+
+
+
+
+SELECT COUNT(`Poll_Ans_ID`) as ans_count,`Ans_Title`
+FROM `answer`,`poll`
+WHERE `Ans_ID` = `Poll_Ans_ID` AND `Poll_Ans_Ques_ID` = 1
+GROUP BY(`Ans_Title`)
+
+
+
+  var chartData = <?php echo $memjson; ?>
+
+
+
+<!-- <table id="orgChartData">
+    <tr>
+        <th>ID</th>
+        <th>parent id</th>
+        <th>name</th>
+        <th>title</th>
+        <th>image</th>
+    </tr>
+    @foreach($memchart as $r)
+      <tr>
+          <td>{{$r->Employee_ID}}</td>
+          <td>{{$r->Employee_Parent_ID}}</td>
+          <td style="font-size:10px">{{$r->Employee_Name}}</td>
+          <td>{{$r->Position_Name}}</td>
+          <td>public/upload/member/{{$r->Employee_Avatar}}</td>
+      </tr>
+    @endforeach
+
+</table> -->

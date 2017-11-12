@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Saigonbpo Admin</title>
+
+	<!-- Global stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/core.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/components.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/colors.css" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->
+	<script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+	<script type="text/javascript" src="assets/js/plugins/ui/moment/moment.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/forms/selects/select2.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/uniform.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/pages/form_layouts.js"></script>
+	<script type="text/javascript" src="assets/js/core/app.js"></script>
+
+	<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+	<script type="text/javascript" src="assets/js/pages/editor_ckeditor.js"></script>
+
+
+	<script type="text/javascript" src="assets/js/plugins/pickers/daterangepicker.js"></script>
+ 	<script type="text/javascript" src="assets/js/plugins/pickers/pickadate/picker.js"></script>
+ 	<script type="text/javascript" src="assets/js/plugins/pickers/pickadate/picker.date.js"></script>
+ 	<script type="text/javascript" src="assets/js/pages/picker_date.js"></script>
+
+	<!-- /theme JS files -->
+
+</head>
+
+<body>
+
+	<!-- Main navbar -->
+	<div class="navbar navbar-default header-highlight">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.html"><img src="assets/images/logo_light.png" alt=""></a>
+
+			<ul class="nav navbar-nav visible-xs-block">
+				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+				<li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+			</ul>
+		</div>
+
+		<div class="navbar-collapse collapse" id="navbar-mobile">
+			<ul class="nav navbar-nav">
+				<li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="icon-paragraph-justify3"></i></a></li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+
+				<li class="dropdown dropdown-user">
+					<a class="dropdown-toggle" data-toggle="dropdown">
+						<img src="assets/images/placeholder.jpg" alt="">
+						<span>Admin</span>
+						<i class="caret"></i>
+					</a>
+
+					<ul class="dropdown-menu dropdown-menu-right">
+						<li><a href="#"><i class="icon-switch2"></i> Đăng xuất</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /main navbar -->
+
+
+	<!-- Page container -->
+	<div class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main sidebar -->
+			<div class="sidebar sidebar-main">
+				<div class="sidebar-content">
+
+					<!-- Main navigation -->
+					<div class="sidebar-category sidebar-category-visible">
+						<div class="category-content no-padding">
+							<ul class="navigation navigation-main navigation-accordion">
+
+								<!-- Main -->
+								<li class="active"><a href="index.html"><i class="icon-home4"></i> <span>Trang chủ</span></a></li>
+								<li>
+									<a href="news-admin-list.html"><i class="icon-copy"></i> <span>Tin Tức</span></a>
+									<ul>
+										<li><a href="news-admin-list.html"><i class="icon-list"></i> <span>Danh sách</span></a></li>
+										<li><a href="news-admin-add.html"><i class="icon-file-plus"></i> <span>Thêm Tin</span></a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#"><i class="icon-magazine"></i> <span>Sự Kiện</span></a>
+									<ul>
+										<li><a href="news-admin-list.html"><i class="icon-list"></i> <span>Danh sách</span></a></li>
+										<li><a href="news-admin-add.html"><i class="icon-file-plus"></i> <span>Thêm Tin</span></a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#"><i class="icon-grid"></i> <span>Bộ Phận</span></a>
+									<ul>
+										<li><a href="event-admin-list.html"><i class="icon-list"></i> <span>Danh sách</span></a></li>
+										<li><a href="event-admin-add.html"><i class="icon-file-plus"></i> <span>Thêm Tin</span></a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#"><i class="icon-images2"></i> <span>Thư Viện</span></a>
+									<ul>
+										<li><a href="album-admin-list.html"><i class="icon-list"></i> <span>Danh sách</span></a></li>
+										<li><a href="album-admin-add.html"><i class="icon-file-plus"></i> <span>Thêm Tin</span></a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#"><i class="icon-people"></i> <span>Sơ đồ nhân sự</span></a>
+									<ul>
+										<li><a href="diagrams-admin-list.html"><i class="icon-list"></i> <span>Danh sách</span></a></li>
+										<li><a href="diagrams-admin-add.html"><i class="icon-file-plus"></i> <span>Thêm Tin</span></a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#"><i class="icon-graph"></i> <span>Khảo sát</span></a>
+									<ul>
+										<li><a href="diagrams-admin-list.html"><i class="icon-list"></i> <span>Danh sách</span></a></li>
+										<li><a href="diagrams-admin-add.html"><i class="icon-file-plus"></i> <span>Thêm Tin</span></a></li>
+									</ul>
+								</li>
+
+							</ul><!--end ul sidebar-->
+						</div>
+					</div><!-- /main navigation -->
+				</div>
+			</div><!-- /main sidebar -->
+
+
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Page header -->
+				<div class="page-header">
+					<div class="page-header-content">
+						<div class="page-title">
+							<h4><i class="icon-copy position-left"></i> <span class="text-semibold">Tin Tức</span></h4>
+						</div>
+					</div>
+
+					<div class="breadcrumb-line breadcrumb-line-component">
+						<ul class="breadcrumb">
+							<li><a href="index.html"><i class="icon-home2 position-left"></i> Trang chủ</a></li>
+							<li><a href="form_layout_vertical.html">Tin Tức</a></li>
+							<li class="active">Thêm tin</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /page header -->
+
+
+				<!-- Content area -->
+				<div class="content">
+
+					<!-- Fieldset legend -->
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+
+							<!-- Basic legend -->
+							<form action="#">
+								<div class="panel panel-flat">
+									<div class="panel-heading">
+										<h5 class="panel-title">Sửa Tin Tức</h5>
+										<div class="heading-elements">
+											<ul class="icons-list">
+		                		<li><a data-action="collapse"></a></li>
+		                		<li><a data-action="reload"></a></li>
+		                	</ul>
+	                	</div>
+									</div>
+
+									<div class="panel-body">
+										<fieldset>
+
+											<!-- <div class="form-group">
+											<label>Loại Tin:</label>
+                            <select data-placeholder="Select your country" class="select">
+                                <option value="noi bo">Nội bộ</option>
+                                <option value="su kien">Sự Kiện</option>
+                            </select>
+			          			</div> -->
+
+											<div class="form-group">
+												<label>Ngày đăng :</label>
+												<div class="input-group">
+													<span class="input-group-addon"><i class="icon-calendar2"></i></span>
+													<input type="text" class="form-control pickadate" placeholder="Chọn ngày đăng" name="ndate">
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label>Tiêu đề:</label>
+												<input type="text" class="form-control" placeholder="Nhập tiêu đề" name="ntitle">
+											</div>
+
+											<div class="form-group">
+												<label>Hình nhỏ:</label>
+												<input type="file" class="file-styled" name="nsimage">
+												<span class="help-block">Chấp nhận file png, jpeg. Kích thước tối đa 2Mb</span>
+											</div>
+
+											<div class="form-group">
+												<label>Hình lớn:</label>
+												<input type="file" class="file-styled" name="nlimage">
+												<span class="help-block">Chấp nhận file png, jpeg. Kích thước tối đa 5Mb</span>
+											</div>
+
+											<div class="form-group">
+												<label>Mô tả:</label>
+												<textarea class="form-control" rows="3" id="field-6" name="ndesc"></textarea>
+											</div>
+
+											<div class="form-group">
+												<label>Nội dung:</label>
+												<textarea name="editor1" id="editor1" class="ckeditor" rows="10" cols="80" name="ncontent">
+						                This is my textarea to be replaced with CKEditor.
+						            </textarea>
+											</div>
+										</fieldset>
+
+										<div class="text-right">
+											<button type="submit" class="btn btn-primary">Sửa<i class="icon-arrow-right14 position-right"></i></button>
+										</div>
+									</div>
+								</div>
+							</form><!-- /end form-->
+
+						</div><!--end col-->
+
+					</div><!-- /end row-->
+
+					<!-- Footer -->
+					<div class="footer text-muted">
+						&copy; 2017.SaigonBpo Admin by Khoa Tran
+					</div>
+					<!-- /footer -->
+
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+
+</body>
+</html>
