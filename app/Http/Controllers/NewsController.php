@@ -26,25 +26,4 @@ class NewsController extends Controller
     return view('home.news',compact('newsall','Cate'));
   }
 
-  // public function getLoaiTin(Request $req) {
-  //
-  //   $Subcate= DB::table('subcate')->select('Sub_ID', 'Sub_Name')
-  //                               ->where('Sub_ID',$req->id)
-  //                               ->get();
-  //
-  //   $newsloai = DB::table('news')
-  //             ->join('subcate', 'news.News_Sub_id','=', 'subcate.Sub_ID')
-  //             ->select('news.News_ID','news.News_Title','news.News_Image',
-  //              'news.News_Description','news.News_Date','subcate.Sub_Name')
-  //             ->where('subcate.Sub_ID',$req->id)
-  //             ->paginate(3);
-  //
-  //               // print_r($newsloai);
-  //               // exit;
-  //
-  //   return view('home.intra',compact('newsloai','Subcate'));
-  // }
-
-
-
 }

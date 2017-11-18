@@ -32,8 +32,8 @@ $config['authentication'] = function () {
 /*============================ License Key ============================================*/
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_licenseKey
 
-$config['licenseName'] = '';
-$config['licenseKey']  = '';
+// $config['licenseName'] = '';
+// $config['licenseKey']  = '';
 
 /*============================ CKFinder Internal Directory ============================*/
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_privateDir
@@ -62,7 +62,8 @@ $config['images'] = array(
 
 /*=================================== Backends ========================================*/
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_backends
-$path = "http://intranet.saigonbpo.vn/";
+$path = "http://intranet.saigonbpo.vn";
+
 $config['backends'][] = array(
     'name'         => 'default',
     'adapter'      => 'local',

@@ -3,7 +3,7 @@ jQuery(document).ready(function($){
 	$('.cd-testimonials-wrapper').flexslider({
 		selector: ".cd-testimonials > li",
 		animation: "slide",
-		controlNav: true,
+		controlNav: false,
 		slideshow: true,
 		smoothHeight: true,
 		start: function(){
@@ -34,4 +34,5 @@ jQuery(document).ready(function($){
 	$('.cd-testimonials-all-wrapper').children('ul').masonry({
   		itemSelector: '.cd-testimonials-item'
 	});
+
 });

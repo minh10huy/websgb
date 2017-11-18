@@ -32,8 +32,14 @@ class HomeController extends Controller
 
       $newsmain = DB::table('news')->select('News_ID','News_Title', 'News_Image', 'News_Date')
                                    ->orderBy('News_Date', 'desc')
+                                   ->where('News_Hot',0)
                                    ->take(6)
                                    ->get();
+
+     $newshot = DB::table('news')->select('News_ID','News_Title','News_Image','News_Hot', 'News_Date')
+                                 ->where('News_Hot',1)
+                                 ->orderBy('News_Date', 'desc')
+                                 ->get();
 
       $date = date('m');
 
@@ -41,10 +47,9 @@ class HomeController extends Controller
                ->leftJoin('subcate', 'employee.Employee_Sub_ID','=', 'subcate.Sub_ID')
                ->leftJoin('position', 'employee.Employee_Position_ID','=', 'position.Position_ID')
                ->select('Employee_ID','Employee_Name','Employee_Avatar','Employee_Top','Position_ID','Position_Name')
-               ->where('Employee_Top',1)
                ->where('Employee_Status',1)
                ->whereMonth('Employee_Birthday',$date)
-               ->take(5)
+               ->orderBy('Employee_ID','asc')
                ->get();
 
               // dd($birth);exit();
@@ -60,7 +65,7 @@ class HomeController extends Controller
                 //  dd($birthall);exit();
 
 
-      return view('home.trangchu',compact('Cate','newsmain','birthtop','birthall'));
+      return view('home.trangchu',compact('Cate','newsmain','newshot','birthtop','birthall'));
       // return view('home');
     }
 

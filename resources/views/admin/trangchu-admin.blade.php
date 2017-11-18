@@ -10,6 +10,15 @@
 
   <!--stats -->
   <div class="row">
+    @if (Auth::user()->name === 'HR')
+      <div class="col-sm-6 col-lg-3">
+          <div class="widget-simple-chart text-right card-box">
+              <div class="circliful-chart circliful text-warning"><i class="icon-people"></i></div>
+              <h3 class="text-success m-t-10">{{$member}}</h3>
+              <p class="text-nowrap m-b-10">Tổng số nhân sự</p>
+          </div>
+      </div>
+    	@else
       <div class="col-sm-6 col-lg-3">
           <div class="widget-simple-chart text-right card-box">
               <div class="circliful-chart circliful text-success"><i class="icon-magazine"></i></div>
@@ -75,6 +84,7 @@
               <p class="text-nowrap m-b-10">Tổng số câu trả lời</p>
           </div>
       </div>
+      @endif
   </div><!-- /stats -->
 
 

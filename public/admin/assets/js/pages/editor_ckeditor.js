@@ -14,7 +14,7 @@ $(function() {
     // ckfinder
 		CKEDITOR.replace('editor1', {
 			filebrowserBrowseUrl: 'http://intranet.saigonbpo.vn/public/admin/ckfinder/ckfinder.html',
-			filebrowserImageBrowseUrl: 'http://intranet.saigonbpo.vn/public/admin/ckfinder/ckfinder.html',
+      filebrowserImageBrowseUrl: 'http://intranet.saigonbpo.vn/public/admin/ckfinder/ckfinder.html',
 			filebrowserUploadUrl: 'http://intranet.saigonbpo.vn/public/admin/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
 	 });
 

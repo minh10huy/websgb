@@ -14,7 +14,7 @@
 				<nav id="breadcrumbs">
 					<ul>
 						<li><a href="{{route('trangchu')}}">Trang chủ</a></li>
-						<li><a href="{{route('bieumau')}}">Biểu mẫu</a></li>
+						<li><a href="{{route('noiquy')}}">Biểu mẫu</a></li>
 					</ul>
 				</nav>
 
@@ -29,7 +29,7 @@
 
 		<!-- Content -->
 		<div class="container">
-				<a class="button" href="{{route('trangchu')}}/storage/app/">Xem và tải biểu mẫu</a>
+				<a class="button" href="{{route('trangchu')}}/storage/app/">Biểu mãu và quy định</a>
 		</div>
 
 	</div>

@@ -86,11 +86,10 @@
 			      </div><!--panel-body-->
 
 			      <div class="panel-footer">
-							<!-- <button type="submit" name="act" class="button"><i class="fa fa-long-arrow-right"></i> Bình Chọn </button> -->
 							<a href="javascript:{}" onclick="document.getElementById('fsurvey').submit(); return false;" class="button small border right">
 								<i class="fa fa-paper-plane-o"></i> Bình Chọn
 							</a>
-							<a href="{{route('ketqua',$itemsv->Ans_Ques_ID)}}" class="button small border"><i class="fa fa-pie-chart"></i> Kết Quả </a>
+							<a href="{{route('ketqua',$itemsv->Ans_Ques_ID)}}" class="button small border"><i class="fa fa-pie-chart"></i> Thống kê </a>
 			      </div>
 			  </div><!--panel-->
 

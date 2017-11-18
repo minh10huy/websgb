@@ -44,17 +44,19 @@ $(function() {
           {"mData": "ns3", "defaultContent": ""},
           {"mData": "ns4", "defaultContent": ""},
           {"mData": "ns5", "defaultContent": ""},
-          {"mData": "ns6", "defaultContent": ""}
+          {"mData": "ns6", "defaultContent": ""},
+          {"mData": "ns7", "defaultContent": ""}
       ],
 
        columnDefs: [
            { width: 50, targets: 0 },
            { width: 100, targets: 1 },
-           { width: 120, targets: 2 },
+           { width: 100, targets: 2 },
            { width: 120, targets: 3 },
-           { width: 200, targets: 4 },
-           { width: 300, targets: 5 },
-           { width: 130, targets: 6 }
+           { width: 120, targets: 4 },
+           { width: 200, targets: 5 },
+           { width: 300, targets: 6 },
+           { width: 130, targets: 7 }
        ],
     });
 
@@ -78,6 +80,23 @@ $(function() {
            { width: 130, targets: 5 }
        ],
     });
+
+
+    $('.positon-table').DataTable({
+      "aoColumns": [
+          {"mData": "pst0", "defaultContent": ""},
+          {"mData": "pst1", "defaultContent": ""},
+          {"mData": "pst2", "defaultContent": ""},
+      ],
+
+       columnDefs: [
+           { width: 100, targets: 0 },
+           { width: 400, targets: 1},
+           { width: 100, targets: 2 }
+       ],
+    });
+
+
 
     $('.album-table').DataTable({
       "aoColumns": [
@@ -131,20 +150,22 @@ $(function() {
             {"mData": "mb8", "defaultContent": ""},
             {"mData": "mb9", "defaultContent": ""},
             {"mData": "mb10", "defaultContent": ""},
+            {"mData": "mb11", "defaultContent": ""},
         ],
 
          columnDefs: [
              { width: 30, targets: 0 },
              { width: 180, targets: 1 },
-             { width: 300, targets: 2 },
-             { width: 500, targets: 3 },
-             { width: 300, targets: 4 },
-             { width: 120, targets: 5 },
-             { width: 250, targets: 6 },
-             { width: 250, targets: 7 },
-             { width: 300, targets: 8 },
-             { width: 400, targets: 9 },
-             { width: 200, targets: 10 }
+             { width: 100, targets: 2 },
+             { width: 50, targets: 3 },
+             { width: 500, targets: 4},
+             { width: 250, targets: 5 },
+             { width: 200, targets: 6 },
+             { width: 300, targets: 7 },
+             { width: 200, targets: 8 },
+             { width: 100, targets: 9 },
+             { width: 200, targets: 10 },
+             { width: 200, targets: 11 }
          ],
       });
 

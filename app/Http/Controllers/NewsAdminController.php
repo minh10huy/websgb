@@ -20,7 +20,7 @@ class NewsAdminController extends Controller
 
    /*--------- -- List-- ----------*/
     public function news_manage() {
-      $listnews = DB::table('news')->select('News_ID','News_Title','News_Image','News_Content',
+      $listnews = DB::table('news')->select('News_ID','News_Hot','News_Title','News_Image','News_Content',
                                     'News_Description', 'News_Date')
                                    ->orderBy('News_Date', 'desc')
                                    ->get();
@@ -39,19 +39,21 @@ class NewsAdminController extends Controller
         $rules = [
           'ndate'=>'required',
           'ntitle'=>'required|max:255',
+          'nhot'=>'required',
           'nlimage'=>'required|image|mimes:jpeg,png,jpg|max:1024',
-          'ndesc'=>'required|max:255',
-          'ncontent'=>'required',
+          // 'ndesc'=>'required|max:255',
+          // 'ncontent'=>'required',
         ];
 
         $messages = [
          'ndate.required'=>'Bạn chưa chọn ngày tháng.',
          'ntitle.required' => 'Bạn chưa nhập chủ đề',
+         'nhot.required' => 'Bạn chưa chọn tin hot',
          'nlimage.required' => 'Bạn chưa chọn hình ảnh',
-         'nlimage.image' => 'Định dạng phải là jpeg,png,jpg',
-         'nlimage.mimes' => 'Kích thước tối đa 1Mb',
-         'ndesc.required' => 'Bạn chưa nhập mô tả',
-         'ncontent.required' => 'Bạn chưa nhập nội dung',
+         'nlimage.mimes' => 'Định dạng phải là jpeg,png,jpg',
+         'nlimage.max' => 'Kích thước tối đa 1Mb',
+         // 'ndesc.required' => 'Bạn chưa nhập mô tả',
+         // 'ncontent.required' => 'Bạn chưa nhập nội dung',
         ];
 
          $validator = Validator::make($request->all(),$rules,$messages);
@@ -64,6 +66,7 @@ class NewsAdminController extends Controller
           $ndate = date('Y-m-d', strtotime($date));
           $imgdate = date('d-m-Y', strtotime($date));
           $ntitle = $request->input('ntitle');
+          $nhot = $request->input('nhot');
           $nlimage = $request->file('nlimage');
           $ndesc = $request->input('ndesc');
           $ncontent = $request->input('ncontent');
@@ -80,6 +83,7 @@ class NewsAdminController extends Controller
              $insnews= DB::table('news')->insertGetId (  //chen du lieu
               [
                  'News_Title' => $ntitle,
+                 'News_Hot' => $nhot,
                  'News_Description' => $ndesc,
                  'News_Content' => $ncontent,
                  'News_Date' => $ndate,
@@ -97,8 +101,8 @@ class NewsAdminController extends Controller
 
     /*--------- -- Update -- ----------*/
     public function news_edit(Request $req) {
-      $updatenews = DB::table('news')->select('News_ID','News_Title','News_Image','News_Content',
-                                    'News_Description', 'News_Date')
+      $updatenews = DB::table('news')->select('News_ID','News_Hot','News_Title','News_Image','News_Content',
+                                    'News_Description','News_Date')
                                     ->where('News_ID',$req->id)
                                     ->first();
 
@@ -110,15 +114,17 @@ class NewsAdminController extends Controller
         $rules = [
           'ndate'=>'required',
           'ntitle'=>'required|max:255',
-          'ndesc'=>'required|max:255',
-          'ncontent'=>'required',
+          'nhot'=>'required',
+          // 'ndesc'=>'required|max:255',
+          // 'ncontent'=>'required',
         ];
 
         $messages = [
          'ndate.required'=>'Bạn chưa chọn ngày tháng.',
          'ntitle.required' => 'Bạn chưa nhập chủ đề',
-         'ndesc.required' => 'Bạn chưa nhập mô tả',
-         'ncontent.required' => 'Bạn chưa nhập nội dung',
+         'nhot.required' => 'Bạn chưa chọn tin hot',
+         // 'ndesc.required' => 'Bạn chưa nhập mô tả',
+         // 'ncontent.required' => 'Bạn chưa nhập nội dung',
         ];
 
          $validator = Validator::make($request->all(),$rules,$messages);
@@ -131,6 +137,7 @@ class NewsAdminController extends Controller
           $ndate = date('Y-m-d', strtotime($date));
           $imgdate = date('d-m-Y', strtotime($date));
           $ntitle = $request->input('ntitle');
+          $nhot = $request->input('nhot');
           $ndesc = $request->input('ndesc');
           $ncontent = $request->input('ncontent');
 
@@ -138,6 +145,7 @@ class NewsAdminController extends Controller
                                     ->update(  //update du lieu
                                     [
                                        'News_Title' => $ntitle,
+                                       'News_Hot' => $nhot,
                                        'News_Description' => $ndesc,
                                        'News_Content' => $ncontent,
                                        'News_Date' => $ndate,

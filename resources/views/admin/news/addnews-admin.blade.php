@@ -60,6 +60,17 @@
                   </div>
 
                   <div class="form-group">
+                    <span>Tin hot:</span>
+                    <div class="radio radio-primary">
+                        <input type="radio" name="nhot" id="radio1" value="1">
+                        <label for="radio1">Có</label>
+                        <br/>
+                        <input type="radio" name="nhot" id="radio2" value="0">
+                        <label for="radio2">Không</label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
                     <label>Hình Ảnh:</label>
                     <input type="file" class="file-styled" value="{{ old('nlimage') }}" name="nlimage" accept="image/jpeg,image/x-png,img/jpg">
                   </div>

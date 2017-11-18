@@ -43,6 +43,7 @@
       <thead>
         <tr>
           <th>STT</th>
+          <th>Tin hot</th>
           <th>Tiêu đề</th>
           <th>Thao tác</th>
           <th>Ngày đăng</th>
@@ -61,6 +62,7 @@
 
       <tr>
         <td>{{$i}}</td>
+        <td>{{$itemnews->News_Hot}}</td>
         <td>{{$itemnews->News_Title}}</td>
         <td class="text-center">
           <ul class="icons-list">

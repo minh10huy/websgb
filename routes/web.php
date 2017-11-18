@@ -11,6 +11,7 @@
 |
 */
 define('DUONG_DAN','public/home/images/');
+define('ROOT_PATH','$_SERVER["DOCUMENT_ROOT"]');
 
 Auth::routes();
 
@@ -31,6 +32,8 @@ Route::middleware('auth')->group(function () {
   Route::get('bo-phan', 'DepartController@getBophan')->name('bophan');
   Route::get('bo-phan/{id}', 'MemberController@getNhanvien')->name('nhanvien');
 
+  Route::get('noi-quy', 'DocumentController@getIndex')->name('noiquy');
+
   Route::get('thu-vien', 'LibraryController@getIndex')->name('thuvien');
 
   Route::get('/10/album', 'AlbumController@getAlbum')->name('album');
@@ -38,15 +41,11 @@ Route::middleware('auth')->group(function () {
 
   Route::get('/11/video', 'VideoController@getVideo')->name('video');
 
-  Route::get('/12/bieu-mau', 'DocumentController@getIndex')->name('bieumau');
-
   Route::get('so-do-nhan-su', 'MemChartController@getIndex')->name('sodonhansu');
 
   Route::get('khao-sat','SurveyController@survey_list')->name('khaosat_list');
   Route::get('khaosat-edit/{id}','SurveyController@survey_edit')->name('khaosat_edit');
   Route::post('khaosat-edit/{id}','SurveyController@post_survey_edit')->name('post_khaosat_edit');
-
-  //Route::get('khao-sat/update/{id}','SurveyController@survey_edit')->name('khaosat_edit');
 
   Route::get('ket-qua/{id}','ResultController@getIndex')->name('ketqua');
 }); //end auth
@@ -64,6 +63,7 @@ Route::prefix('admin')->group(function() {
 //News==============================================================================//
 
 Route::group(['prefix' => 'admin'], function(){
+
     // News========================================//
     Route::get('quanli-tin','NewsAdminController@news_manage')->name('quanli-tin');
 
@@ -91,6 +91,17 @@ Route::group(['prefix' => 'admin'], function(){
     Route::post('sua-bophan-img/{id}','DepartAdminController@depart_edit_img_post')->name('post-sua-bophan-img');
 
     Route::get('xoa-bophan/{id}', 'DepartAdminController@depart_delete')->name('xoa-bophan');
+
+
+    // Position========================================//
+    Route::get('quanli-chucvu','PositionAdminController@position_manage')->name('quanli-chucvu');
+
+    Route::get('them-chucvu','PositionAdminController@position_add')->name('them-chucvu');
+    Route::post('them-chucvu','PositionAdminController@position_add_post')->name('post-them-chucvu');
+
+    Route::get('sua-chucvu/{id}','PositionAdminController@position_edit')->name('sua-chucvu');
+    Route::post('sua-chucvu/{id}','PositionAdminController@position_edit_post')->name('post-sua-chucvu');
+
 
     // Album========================================//
     Route::get('quanli-album','AlbumAdminController@album_manage')->name('quanli-album');

@@ -31,7 +31,7 @@
 		<?php $path = 'public/upload/subcate/'; ?>
 		<!-- department -->
 		@foreach ($depart as $items)
-		<div class="col-md-4 col-sm-6">
+		<div class="col-md-3 col-sm-6">
 			<div class="service">
 				@if($items->Sub_Image != "")
 					<img src='{{asset($path.$items->Sub_Image)}}' alt='' />

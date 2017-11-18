@@ -17,7 +17,7 @@ class DepartController extends Controller
 
       $depart= DB::table('subcate')->select('Sub_ID', 'Sub_Name','Sub_Description','Cat_Sub_ID','Sub_Image')
                                   ->where('Cat_Sub_ID',$id)
-                                  ->paginate(6);
+                                  ->paginate(12);
 
     return view('home.department',compact('depart','Cate'));
   }

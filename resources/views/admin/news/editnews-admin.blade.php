@@ -57,6 +57,25 @@
                   </div>
 
                   <div class="form-group">
+                    <span>Tin hot: </span>
+                    <span>
+                      @if($updatenews->News_Hot == 1)
+                          <span class="btn-success">Có</span>
+                      @else
+                          <span class="btn-danger">không</span>
+                      @endif
+                    </span>
+                    <p>Thay đổi: </p>
+                    <div class="radio radio-primary">
+                        <input type="radio" name="nhot" id="radio1" value="1">
+                        <label for="radio1">Có</label>
+                        <br/>
+                        <input type="radio" name="nhot" id="radio2" value="0">
+                        <label for="radio2">Không</label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
                     <label>Hình Ảnh:</label>
                     <div class="row">
                       <div class="col-sm-10">

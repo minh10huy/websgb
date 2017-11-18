@@ -18,8 +18,17 @@ class ResultController extends Controller
               ->groupBy('Ans_ID','Ans_Title')
               ->get();
 
+
+    $ques = DB::table('question')
+              ->select('Ques_Title')
+              ->where ('question.Ques_ID',$req->id)
+              ->first();
+
+              // dd($ques);exit();
+
               $jsdata = json_encode($result);
 
-    return view('home.result',compact('jsdata','Cate'));
+
+    return view('home.result',compact('jsdata','Cate','ques'));
   }
 }

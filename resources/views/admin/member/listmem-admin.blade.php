@@ -45,11 +45,12 @@
           <th>STT</th>
           <th>Bộ phận</th>
           <th>Vị trí</th>
+          <th>ID</th>
           <th>Họ tên</th>
           <th>Hình ảnh</th>
-          <th>Trưởng phòng/nhóm</th>
+          <th>Trưởng phòng</th>
           <!-- <th>Phone nội bộ</th> -->
-          <th>Cấp trên</th>
+          <th>Cấp trên là</th>
           <th>Email nội bộ</th>
           <th>Ngày sinh</th>
           <th>Thông tin</th>
@@ -68,6 +69,7 @@
         <td>{{$i}}</td>
         <td>{{$itemmb->Sub_Name}}</td>
         <td>{{$itemmb->Position_Name}}</td>
+        <td>{{$itemmb->Employee_ID}}</td>
         <td>{{$itemmb->Employee_Name}}</td>
         <td>
           @if($itemmb->Employee_Avatar != "")

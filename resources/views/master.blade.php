@@ -7,11 +7,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8" />
+<link rel="shortcut icon" href="{{asset(DUONG_DAN.'favicon.ico')}}" type="image/ico">
 <title>Saigonbpo</title>
 
 
 <!-- CSS
 ================================================== -->
+
 <link rel="stylesheet" href="{{asset('public/home/css/lity.css')}}" />
 <link rel="stylesheet" href="{{asset('public/home/css/style.css')}}" />
 <link rel="stylesheet" href="{{asset('public/home/css/bootstrap.css')}}" />
@@ -19,7 +21,9 @@
 <link rel="stylesheet" href="{{asset('public/home/css/colors/blue.css')}}" id="colors" />
 <link rel="stylesheet" href="{{asset('public/home/css/simplelightbox.min.css')}}" id="colors" />
 <link rel="stylesheet" href="{{asset('public/home/css/orgchart.css')}}"/>
-
+<link rel="stylesheet" href="{{asset('public/home/css/video.css')}}"/>
+<link rel="stylesheet" href="{{asset('public/home/css/slick.css')}}"/>
+<link rel="stylesheet" href="{{asset('public/home/css/slick-theme.css')}}"/>
 
 <!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -38,7 +42,7 @@
 		<div class="header">
 			<div class="col-sm-12 col-md-3">
 				<div id="logo">
-					<a href="{{route('trangchu')}}"><img src="{{asset(DUONG_DAN.'logo-sgbpo.png')}}" alt="" /></a>
+					<a href="{{route('trangchu')}}"><img src="{{asset(DUONG_DAN.'login-logo.png')}}" alt="" /></a>
 				</div>
 			</div>
 
@@ -83,6 +87,9 @@
 <script type="text/javascript" src="{{asset('public/home/js/simple-lightbox.js')}}"></script>
 <script type="text/javascript" src="{{asset('public/home/js/main.js')}}"></script>
 <script type="text/javascript" src="{{asset('public/home/js/masonry.pkgd.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('public/home/js/video.js')}}"></script>
+<script type="text/javascript" src="{{asset('public/home/js/slick.js')}}"></script>
+<script type="text/javascript" src="{{asset('public/home/js/against.js')}}"></script>
 
 
 

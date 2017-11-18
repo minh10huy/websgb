@@ -106,26 +106,44 @@
 
 								<!-- Main -->
 								<li class="active"><a href="{{route('quantri')}}"><i class="icon-home4"></i> <span>Trang chủ</span></a></li>
+
+								@if (Auth::user()->name === 'HR')
+									<li>
+										<a href="#"><i class="icon-people"></i> <span>Nhân sự</span></a>
+										<ul>
+											<li><a href="{{route('them-member')}}" target="_blank"><i class="icon-file-plus"></i> <span>Thêm nhân sự</span></a></li>
+											<li><a href="{{route('quanli-member')}}"><i class="icon-list"></i> <span>Danh sách</span></a></li>
+										</ul>
+									</li>
+								@else
 								<li>
 									<a href="#"><i class="icon-magazine"></i> <span>Tin Tức</span></a>
 									<ul>
-										<li><a href="{{route('them-tin')}}"><i class="icon-file-plus"></i> <span>Thêm Tin</span></a></li>
+										<li><a href="{{route('them-tin')}}" target="_blank"><i class="icon-file-plus"></i> <span>Thêm Tin</span></a></li>
 										<li><a href="{{route('quanli-tin')}}"><i class="icon-list"></i> <span>Danh sách</span></a></li>
 									</ul>
 								</li>
 
 								<li>
-									<a href="#"><i class="icon-grid"></i> <span>Bộ Phận</span></a>
+									<a href="#"><i class="icon-grid"></i> <span>Phòng Ban</span></a>
 									<ul>
-										<li><a href="{{route('them-bophan')}}"><i class="icon-file-plus"></i> <span>Thêm Bộ Phận</span></a></li>
+										<li><a href="{{route('them-bophan')}}" target="_blank"><i class="icon-file-plus"></i> <span>Thêm Phòng Ban</span></a></li>
 										<li><a href="{{route('quanli-bophan')}}"><i class="icon-list"></i> <span>Danh sách</span></a></li>
+									</ul>
+								</li>
+
+								<li>
+									<a href="#"><i class="icon-chess-king"></i> <span>Chức vụ</span></a>
+									<ul>
+										<li><a href="{{route('them-chucvu')}}" target="_blank"><i class="icon-file-plus"></i> <span>Thêm Chức Vụ</span></a></li>
+										<li><a href="{{route('quanli-chucvu')}}"><i class="icon-list"></i> <span>Danh sách</span></a></li>
 									</ul>
 								</li>
 
 								<li>
 									<a href="#"><i class="icon-people"></i> <span>Nhân sự</span></a>
 									<ul>
-										<li><a href="{{route('them-member')}}"><i class="icon-file-plus"></i> <span>Thêm nhân sự</span></a></li>
+										<li><a href="{{route('them-member')}}" target="_blank"><i class="icon-file-plus"></i> <span>Thêm nhân sự</span></a></li>
 										<li><a href="{{route('quanli-member')}}"><i class="icon-list"></i> <span>Danh sách</span></a></li>
 									</ul>
 								</li>
@@ -133,7 +151,7 @@
 								<li>
 									<a href="#"><i class="icon-image4"></i> <span>Album</span></a>
 									<ul>
-										<li><a href="{{route('them-album')}}"><i class="icon-file-plus"></i> <span>Thêm album</span></a></li>
+										<li><a href="{{route('them-album')}}" target="_blank"><i class="icon-file-plus"></i> <span>Thêm album</span></a></li>
 										<li><a href="{{route('quanli-album')}}"><i class="icon-list"></i> <span>Danh sách</span></a></li>
 									</ul>
 								</li>
@@ -141,7 +159,7 @@
 								<li>
 									<a href="#"><i class="icon-images2"></i> <span>Hình ảnh</span></a>
 									<ul>
-										<li><a href="{{route('them-photo')}}"><i class="icon-file-plus"></i> <span>Thêm ảnh</span></a></li>
+										<li><a href="{{route('them-photo')}}" target="_blank"><i class="icon-file-plus"></i> <span>Thêm ảnh</span></a></li>
 										<li><a href="{{route('quanli-photo')}}"><i class="icon-list"></i> <span>Danh sách</span></a></li>
 									</ul>
 								</li>
@@ -149,7 +167,7 @@
 								<li>
 									<a href="#"><i class="icon-video-camera3"></i> <span>Video</span></a>
 									<ul>
-										<li><a href="{{route('them-video')}}"><i class="icon-file-plus"></i> <span>Thêm Video</span></a></li>
+										<li><a href="{{route('them-video')}}" target="_blank"><i class="icon-file-plus"></i> <span>Thêm Video</span></a></li>
 										<li><a href="{{route('quanli-video')}}"><i class="icon-list"></i> <span>Danh sách</span></a></li>
 									</ul>
 								</li>
@@ -157,14 +175,14 @@
 								<li>
 									<a href="#"><i class="icon-graph"></i> <span>Khảo sát</span></a>
 									<ul>
-										<li><a href="{{route('them-cauhoi')}}"><i class="icon-file-plus"></i> <span>Thêm Câu Hỏi</span></a></li>
+										<li><a href="{{route('them-cauhoi')}}" target="_blank"><i class="icon-file-plus"></i> <span>Thêm Câu Hỏi</span></a></li>
 										<li><a href="{{route('quanli-cauhoi')}}"><i class="icon-list"></i> <span>Danh sách câu hỏi</span></a></li>
 
-										<li><a href="{{route('them-traloi')}}"><i class="icon-file-plus"></i> <span>Thêm Câu Trả Lời</span></a></li>
-										<li><a href="{{route('quanli-traloi')}}"><i class="icon-list"></i> <span>Danh sách trả lời</span></a></li> 
+										<li><a href="{{route('them-traloi')}}" target="_blank"><i class="icon-file-plus"></i> <span>Thêm Câu Trả Lời</span></a></li>
+										<li><a href="{{route('quanli-traloi')}}"><i class="icon-list"></i> <span>Danh sách trả lời</span></a></li>
 									</ul>
 								</li>
-
+							  @endif
 							</ul><!--end ul sidebar-->
 						</div>
 					</div><!-- /main navigation -->

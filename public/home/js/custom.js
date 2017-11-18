@@ -1,8 +1,5 @@
 /* ----------------- Start Document ----------------- */
-(function($){
-"use strict";
-
-	$(document).ready(function(){
+$(document).ready(function(){
 
 	/*----------------------------------------------------*/
 	/* Navigation
@@ -91,67 +88,6 @@
 		$('.search-trigger').toggleClass("active");
 	});
 
-
-	/*----------------------------------------------------*/
-	/*  Flexslider
-	/*----------------------------------------------------*/
-	$('.testimonials-slider').flexslider({
-		 animation: "fade",
-		 directionNav: false
-	});
-
-
-	$('.simple-slider').flexslider({
-		animation: "fade",
-		controlNav: false,
-		prevText: "",           //String: Set the text for the "previous" directionNav item
-		nextText: ""
-	});
-
-
-	/*----------------------------------------------------*/
-	/*  Owl Carousel
-	/*----------------------------------------------------*/
-	$('.logo-carousel').owlCarousel({
-	  loop: false,
-	  margin:10,
-	  nav:true,
-	  responsive:{
-			0:{
-				 items:1
-			},
-			600:{
-				 items:3
-			},
-			1000:{
-				 items:5
-			}
-	  },
-	  navText:["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"]
-	});
-
-	$('.owl-carousel').owlCarousel({
-	  loop: false,
-	  margin:30,
-	  nav:true,
-	  responsive:{
-			0:{
-				 items:1
-			},
-			600:{
-				 items:1
-			},
-			768:{
-				 items:2
-			},
-			1000:{
-				 items:3
-			}
-	  },
-	  navText:["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"]
-	});
-
-
 	/*----------------------------------------------------*/
 	/*  Back to Top
 	/*----------------------------------------------------*/
@@ -173,110 +109,66 @@
 		 return false;
 	  });
 
+		/*----------------------------------------------------*/
+			/*  See All Projects Button
+			/*----------------------------------------------------*/
+			function resizeBox() {
+				var divHeight = $('.projects.latest a img, .project-category img, .full-width.projects a img').height();
+				$('.see-all').css('min-height', divHeight+'px');
+			}
 
-	/*----------------------------------------------------*/
-	/*  Counters
-	/*----------------------------------------------------*/
-    $('.counter').counterUp({
-        delay: 100,
-        time: 1600
-    });
+			$(window).load(boxfunction);
+			$(window).on('resize',boxfunction);
 
-
-	/*----------------------------------------------------*/
-	/*  See All Projects Button
-	/*----------------------------------------------------*/
-	function resizeBox() {
-		var divHeight = $('.projects.latest a img, .project-category img, .full-width.projects a img').height();
-		$('.see-all').css('min-height', divHeight+'px');
-	}
-
-	$(window).load(boxfunction);
-	$(window).on('resize',boxfunction);
-
-	function boxfunction() {
-	    resizeBox();
-	}
+			function boxfunction() {
+			    resizeBox();
+			}
 
 
 	/*----------------------------------------------------*/
-	/*  Projects Filtering
-	/*----------------------------------------------------*/
+ 	/*  LightBox
+ 	/*----------------------------------------------------*/
+ 	$(document).ready(function() {
+ 		var $gallery = $('.gallery a').simpleLightbox();
+ 	 });
 
-	$('.option-set.alt li').on('click',function(event) {
-	  event.preventDefault();
+ 	/*----------------------------------------------------*/
+ 	/*  Tabs
+ 	/*----------------------------------------------------*/
 
-	  var item = $(".projects a"),
-	  image = item.find('.projects a img');
-	  item.removeClass('clickable unclickable');
-	  image.stop().animate({opacity: 1});
-	  var filter = $(this).children('a').data('filter');
-	  item.filter(filter).addClass('clickable');
-	  item.filter(':not('+filter+')').addClass('unclickable');
-	  item.filter(':not('+filter+')').find('.themes-list a img').stop().animate({opacity: 0.2});
-	});
+ 	var $tabsNav    = $('.tabs-nav'),
+ 	$tabsNavLis = $tabsNav.children('li');
 
-	$('#filters a').click(function(e){
-		 e.preventDefault();
+ 	$tabsNav.each(function() {
+ 		 var $this = $(this);
 
-		 //var selector = $(this).attr('data-filter');
+ 		 $this.next().children('.tab-content').stop(true,true).hide()
+ 		 .first().show();
 
-		 $(this).parents('ul').find('a').removeClass('selected');
-		 $(this).addClass('selected');
-	});
+ 		 $this.children('li').first().addClass('active').stop(true,true).show();
+ 	});
 
-	$('.projects a').on('click',function(e) {
-	  if($(this).hasClass('unclickable')){
-			e.preventDefault();
-		}
-	});
+ 	$tabsNavLis.on('click', function(e) {
+ 		 var $this = $(this);
 
-	/*----------------------------------------------------*/
-	/*  LightBox
-	/*----------------------------------------------------*/
-	$(document).ready(function() {
-		var $gallery = $('.gallery a').simpleLightbox();
-	 });
+ 		 $this.siblings().removeClass('active').end()
+ 		 .addClass('active');
 
-	/*----------------------------------------------------*/
-	/*  Tabs
-	/*----------------------------------------------------*/
+ 		 $this.parent().next().children('.tab-content').stop(true,true).hide()
+ 		 .siblings( $this.find('a').attr('href') ).fadeIn();
 
-	var $tabsNav    = $('.tabs-nav'),
-	$tabsNavLis = $tabsNav.children('li');
-
-	$tabsNav.each(function() {
-		 var $this = $(this);
-
-		 $this.next().children('.tab-content').stop(true,true).hide()
-		 .first().show();
-
-		 $this.children('li').first().addClass('active').stop(true,true).show();
-	});
-
-	$tabsNavLis.on('click', function(e) {
-		 var $this = $(this);
-
-		 $this.siblings().removeClass('active').end()
-		 .addClass('active');
-
-		 $this.parent().next().children('.tab-content').stop(true,true).hide()
-		 .siblings( $this.find('a').attr('href') ).fadeIn();
-
-		 e.preventDefault();
-	});
-	var hash = window.location.hash;
-	var anchor = $('.tabs-nav a[href="' + hash + '"]');
-	if (anchor.length === 0) {
-		 $(".tabs-nav li:first").addClass("active").show(); //Activate first tab
-		 $(".tab-content:first").show(); //Show first tab content
-	} else {
-		 console.log(anchor);
-		 anchor.parent('li').click();
-	}
-
+ 		 e.preventDefault();
+ 	});
+ 	var hash = window.location.hash;
+ 	var anchor = $('.tabs-nav a[href="' + hash + '"]');
+ 	if (anchor.length === 0) {
+ 		 $(".tabs-nav li:first").addClass("active").show(); //Activate first tab
+ 		 $(".tab-content:first").show(); //Show first tab content
+ 	} else {
+ 		 console.log(anchor);
+ 		 anchor.parent('li').click();
+ 	}
 
 // ------------------ End Document ------------------ //
-});
 
-})(this.jQuery);
+});

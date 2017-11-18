@@ -98,8 +98,9 @@ class SurveyController extends Controller
              }
         }
         else {
-           echo "Bạn đã hết thời gian đăng nhập :((";
-           session()->forget('userss');
+           echo "Bạn đã hết thời gian đăng nhập :(( ";
+           echo "<a href='http://localhost/sgnblara/login'>Xem và tải biểu mẫu</a>";
+           // session()->forget('userss');
         }
     }
   }//end post

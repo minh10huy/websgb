@@ -34,9 +34,9 @@
 
 						<div class="panel panel-primary">
 							<div class="panel-heading">
-								Ai sẽ là người đẹp nhất ?
+								{{$ques->Ques_Title}}
 							</div>
-
+							
 							<div class="panel-body">
 									<div id="chartdiv" style="width: 100%; height: 400px;"></div>
 									<a href="{{route('khaosat_list')}}" class="button small border"><i class="fa fa-long-arrow-left"></i> Quay lại </a>

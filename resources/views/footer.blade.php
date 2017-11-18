@@ -26,8 +26,8 @@
 
 			 <div class="col-xs-12 col-sm-6 col-md-3 wow zoomIn">
 				 <ul class="footercontact">
-					 <li><i class="fa fa-phone fa-2x"></i><span>Phone:</span><a href="tel:88 02 8714612"> +84 8 7300 8184</a></li>
-					 <li><i class="fa fa-fax fa-2x"></i></i><span>Fax:</span><a href="tel:88 02 8714612"> +84 8 7300 8185</a></li>
+					 <li><i class="fa fa-phone fa-2x"></i><span>Phone:</span><a href="tel:88 02 8714612"> +84 28 7300 8184</a></li>
+					 <li><i class="fa fa-fax fa-2x"></i></i><span>Fax:</span><a href="tel:88 02 8714612"> +84 28 7300 8185</a></li>
 				 </ul>
 			 </div><!-- /.col-xs-12 .col-sm-3 .col-md-3 -->
 

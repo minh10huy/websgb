@@ -74,6 +74,10 @@
 									 <span class="list-meta">
 										 <span class="list-meta-item"><i class="fa fa-id-card-o"></i> {{$mems->Position_Name}}</span>
 									 </span>
+									 <!-- <span class="list-meta">
+										 <span class="list-meta-item"><i class="fa fa-volume-control-phone"></i> {{$mems->Employee_InterPhone}}</span>
+										 <span class="list-meta-item"><i class="fa fa-envelope-open-o"></i> {{$mems->Employee_Email}}</span>
+									 </span> -->
 									 <p>{!!$mems->Employee_Intro!!}</p>
 							 </div>
 					 </div>
@@ -90,7 +94,6 @@
 		 </nav>
 	 </div>
 	 <div class="clearfix"></div>
-
 	 <a href="{{route('bophan')}}" class="button small border"><i class="fa fa-long-arrow-left"></i> Quay lại </a>
 </div>
 

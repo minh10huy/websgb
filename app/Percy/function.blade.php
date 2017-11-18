@@ -1,4 +1,7 @@
 <?php
+/* ---------------------------------- */
+/* Developer Khoa Tran
+------------------------------------- */
 function subCate($data,$id) {
   echo "<ul>";
   foreach ($data as $item) {
